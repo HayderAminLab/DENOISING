@@ -1,10 +1,8 @@
 # **DENOISING: Dynamic Enhancement and Noise Overcoming in Multimodal Neural Observations via High-density CMOS-based Biosensors**
 
 <p align="center">
-  <img width="779" height="438" src="https://github.com/HayderAminLab/DENOISING/assets/158823360/b749758b-4d6c-4a1b-a792-199cf2efa31e">
+  <img width="1090" height="614" src="https://github.com/HayderAminLab/DENOISING/assets/158823360/1c5ad1e1-5746-44b4-8a2c-92ceecde429b">
 </p>
-
-
 
 
  A computational framework designed to enhance the fidelity and clarity of large-scale bioelectrical signals by dynamically mitigating noise. It addresses the challenge of 
