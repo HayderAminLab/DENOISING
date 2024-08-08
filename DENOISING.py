@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, lfilter
 import h5py
 import pandas as pd
-import LFP_Denosing as LFP_denosing
-import Spikes_Denosing as Spikes_Denosing
+import LFP_Denoising as LFP_denoising
+import Spikes_Denoising as Spikes_Denoising
 import numpy as np
 import os
 
@@ -161,17 +161,17 @@ class DENOISING:
             if expFile[0] != '.':
                 print(expFile)
                 if Analysis_Item == 'LFPs':
-                    Analysis = LFP_denosing.LFP_DENOISING_Function(self.srcfilepath)
+                    Analysis = LFP_denoising.LFP_DENOISING_Function(self.srcfilepath)
                     lfpChId, lfpTimes, LfpForms = Analysis.AnalyzeExp(expFile=expFile)
                 else:
-                    Analysis = Spikes_Denosing.Spikes_DENOISING_Function(self.srcfilepath)
+                    Analysis = Spikes_Denoising.Spikes_DENOISING_Function(self.srcfilepath)
                     SpikesChId, SpikesTimes = Analysis.AnalyzeExp(expFile=expFile)
-    def Raster_plot(self,Analysis_Item='Spikes',denosing=False):
+    def Raster_plot(self,Analysis_Item='Spikes',denoising=False):
         '''
         The main function for raster plot, including LFPs and Spikes, and save the raster plot results.
         :param Analysis_Item: String
                 'Spikes' or 'LFPs'
-        :param denosing: Boolean
+        :param denoising: Boolean
                 True: the raster plot for DENOISING; False: the raster plot for Raw.
         :return:
         '''
@@ -191,18 +191,21 @@ class DENOISING:
                     LfpForms = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["LfpForms"])
                     lfpChId = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["LfpChIDs"])
                     lfpTimes = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["LfpTimes"])/ samplingRate
-                    if denosing:
-                        lfpTimes = np.load(self.srcfilepath + expFile[:-4] + '_denosed_LfpTimes' + '.npy')
-                        lfpChId = np.load(self.srcfilepath + expFile[:-4] + '_denosed_LfpChIDs' + '.npy')
+                    binsDistr = np.arange(0, np.ceil(max(lfpTimes)), 0.1)  # fixed bin size
+                    if denoising:
+                        lfpTimes = np.load(self.srcfilepath + expFile[:-4] + '_denoised_LfpTimes' + '.npy')
+                        lfpChId = np.load(self.srcfilepath + expFile[:-4] + '_denoised_LfpChIDs' + '.npy')
+
                 else:
-                    lfpTimes = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["SpikeTimes"])
+                    lfpTimes = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["SpikeTimes"])/ samplingRate
                     lfpChId = np.asarray(filehdf5_bxr["3BResults"]["3BChEvents"]["SpikeChIDs"])
-                    if denosing:
-                        lfpTimes = np.load(self.srcfilepath + expFile[:-4] + '_denosed_SpikesTimes' + '.npy')
-                        lfpChId = np.load(self.srcfilepath + expFile[:-4] +'_denosed_SpikesChIDs' + '.npy')
+                    binsDistr = np.arange(0, np.ceil(max(lfpTimes)), 0.1)  # fixed bin size
+                    if denoising:
+                        lfpTimes = np.load(self.srcfilepath + expFile[:-4] + '_denoised_SpikesTimes' + '.npy')
+                        lfpChId = np.load(self.srcfilepath + expFile[:-4] +'_denoised_SpikesChIDs' + '.npy')
+
 
                 lfpTimes_last_time = lfpTimes
-                binsDistr = np.arange(0, lfpTimes_last_time[-1], 0.1)  # fixed bin size
                 averageEventRateHist, averageEventRateBinsEdge = np.histogram(lfpTimes_last_time, bins=binsDistr,normed=False, weights=None, density=None)
                 averageEventRateXScale = (averageEventRateBinsEdge[1:] - averageEventRateBinsEdge[0:-1]) / 2.0 + averageEventRateBinsEdge[0:-1]
                 # Plot the raster plot
@@ -226,7 +229,7 @@ class DENOISING:
 
                 ax[1].set_xlim((averageEventRateXScale[0], averageEventRateXScale[-1]))
                 fig.tight_layout()
-                if denosing:
+                if denoising:
                     colorMapTitle = expFile[:-4] + '_Raster_plot_DENOISING_' + Analysis_Item
                 else:
                     colorMapTitle = expFile[:-4] + '_Raster_plot_Raw_' + Analysis_Item
@@ -234,7 +237,7 @@ class DENOISING:
                 plt.close()
 
 if __name__ == '__main__':
-    srcfilepath = r'/Users/hux2/Desktop/Noisy Data/Choose_file/Hippo_LFPs/LFP_PCA/TEST/'
+    srcfilepath = r'H:/DENOISING/Spike/'
     analysis = DENOISING(srcfilepath)
-    analysis.DENOISING(Analysis_Item='LFPs')
-    analysis.Raster_plot(Analysis_Item='LFPs',denosing=True)
+    analysis.DENOISING(Analysis_Item='Spikes')
+    analysis.Raster_plot(Analysis_Item='Spikes',denoising=True)
