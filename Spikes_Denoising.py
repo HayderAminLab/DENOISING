@@ -9,7 +9,7 @@ import numpy as np
 import os
 import h5py
 import matplotlib.pyplot as plt
-"""need change these parameters based on difference datasets"""
+"""need change these parameters based on different datasets"""
 SpikesMax = 15               # (Hz) - maximum acceptable Spikes Rate(Spikes events/min)
 SpikesMin = 0.1                # (Hz) - minumum acceptable Spikes Rate(Spikes events/min)
 mbrMin = 0.1              # burst/min - minumum acceptable MBR

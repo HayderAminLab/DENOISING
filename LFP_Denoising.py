@@ -8,7 +8,7 @@ Created on Dec 12 2022
 import h5py
 import numpy as np
 import os
-"""need change these parameters based on difference datasets"""
+"""need change these parameters based on different datasets"""
 threshold_low = 50   #uV
 threshold_high = 4000  #uV
 LFPMax= 30               # (Hz) - maximum acceptable LFP Rate(LFP events/min)
