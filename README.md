@@ -28,7 +28,7 @@
     2. Indicate data type (Analysis_Item='LFPs') OR (Analysis_Item='Spikes')
     3. Change parameters based on dataset using LFP_Denoising.py OR Spikes_Denoising.py as needed.
     4. Use Raster_plot function to compare raw (denoising=False) and denoised (denoising=True) raster data.
-    5. Refine denoised datsets through repeption of steps iii-iv if needed. 
+    5. Refine denoised datsets through repetition of steps iii-iv if needed. 
 
 ## **Data**
 
