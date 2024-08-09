@@ -12,16 +12,16 @@
 ## **Contents**
 
   - README - current file
-  - LICENSE - usage and redistrubution conditions
+  - LICENSE - usage and redistribution conditions
   - DENOISING.py - main top-level function used to denoise multimodal datasets
   - LFP_Denoising.py - top-level function used for denoising detected-LFP events
   - Spikes_Denoising.py - top-level function used for denoising detected-spikes
 
 ## **Getting Started**
 
-  - Download data from Zenodo and separate into subfolders based on datatype i.e. LFP and Spike.
+  - Download data from Zenodo and separate it into subfolders based on datatype i.e. LFP and Spike.
   - If using personal data, format folder structure as instructed for the provided data. 
-  - Clone the respository locally.
+  - Clone the repository locally.
        > git clone https://github.com/HayderAminLab/DENOISING.git
   - Go to DENOISING.py and work through the script as follows:
     1. Change srcfilepath to folder with dataset
@@ -33,8 +33,7 @@
 ## **Data**
 
 The following datasets have been provided for using and test running the DENOISING script.
-  - Sample LFP-detected Dataset with Noise (XXX)
-  - Sample Spike-detected Dataset with Noise (XXX)
+  - Samples of LFP-detected and Spike-detected Datasets with Noise (https://doi.org/10.5281/zenodo.13284452), made available under Creative Commons Attribution 4.0 International!
 
 ## **Requirements**
 
