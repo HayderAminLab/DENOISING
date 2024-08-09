@@ -18,7 +18,7 @@ import os
 
 class DENOISING:
     """
-    The main class for denoising, including LFPs and Spikes, and save the denoising results.
+    The main class for denoising, including LFPs and Spikes, and saves the denoising results.
     """
     def __init__(self, srcfilepath):
         self.srcfilepath = srcfilepath  # main path

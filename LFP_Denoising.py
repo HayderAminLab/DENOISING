@@ -8,11 +8,11 @@ Created on Dec 12 2022
 import h5py
 import numpy as np
 import os
-"""need change these parameters based on different datasets"""
+"""change these parameters based on different datasets"""
 threshold_low = 50   #uV
 threshold_high = 4000  #uV
 LFPMax= 30               # (Hz) - maximum acceptable LFP Rate(LFP events/min)
-LFPMin= 0.1                # (Hz) - minumum acceptable LFP Rate(LFP events/min)
+LFPMin= 0.1                # (Hz) - minimum acceptable LFP Rate(LFP events/min)
 Firing_Electrodes_Count_Threshold = 6000 # the maximum acceptable active channel numbers in Frames
 Duration_threshold = 10 # duration thrshold(ms)
 Synchrony_Threshold = 0.1 #Those averageEventRateHists less than Synchrony_Threshold of all the events count in hist are regarded as random Events

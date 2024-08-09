@@ -9,11 +9,11 @@ import numpy as np
 import os
 import h5py
 import matplotlib.pyplot as plt
-"""need change these parameters based on different datasets"""
+"""change these parameters based on different datasets"""
 SpikesMax = 15               # (Hz) - maximum acceptable Spikes Rate(Spikes events/min)
-SpikesMin = 0.1                # (Hz) - minumum acceptable Spikes Rate(Spikes events/min)
-mbrMin = 0.1              # burst/min - minumum acceptable MBR
-mbrMax = 10              # burst/min - minumum acceptable MBR
+SpikesMin = 0.1                # (Hz) - minimum acceptable Spikes Rate(Spikes events/min)
+mbrMin = 0.1              # burst/min - minimum acceptable MBR
+mbrMax = 10              # burst/min - maximum acceptable MBR
 Synchrony_Threshold = 0.05 #Those averageEventRateHists less than Synchrony_Threshold of all the events count in hist are regarded as random Events
 Firing_Electrodes_Count_Threshold = 3500  # the maximum acceptable active channel numbers at the same time
 class Spikes_DENOISING_Function:
