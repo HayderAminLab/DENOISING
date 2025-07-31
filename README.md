@@ -41,7 +41,7 @@ Python >= 3.7; all analyses and testing were performed using Python 3.7 within P
 
 ## **5. 📄 Citation & Associated Publication**
 
-We kindly ask you to cite our paper if you use our code in your research.
+We kindly ask you to **📌 cite** our paper if you use our code in your research.
 
 **📘 Publication:**  
 Hu X, Emery BA, Khanzada S, Amin H. (2024).  
