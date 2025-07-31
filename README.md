@@ -9,7 +9,7 @@
  and facilitating the separation of signal and noise components, DENOISING aids in the accurate analysis and interpretation 
  of complex neural connectivity and dynamics without relying on specific data transformations.
 
-## **Contents**
+## **1. Contents**
 
   - README - current file
   - LICENSE - usage and redistribution conditions
@@ -17,7 +17,7 @@
   - LFP_Denoising.py - top-level function used for denoising detected-LFP events
   - Spikes_Denoising.py - top-level function used for denoising detected-spikes
 
-## **Getting Started**
+## **2. Getting Started**
 
   - Download data from Zenodo and separate it into subfolders based on datatype i.e. LFP and Spike.
   - If using personal data, format folder structure as instructed for the provided data. 
@@ -30,11 +30,11 @@
     4. Use Raster_plot function to compare raw (denoising=False) and denoised (denoising=True) raster data.
     5. Refine denoised datsets through repetition of steps iii-iv if needed. 
 
-## **Data**
+## **3. Data**
 
 The following datasets have been provided for using and test running the DENOISING script.
   - Samples of LFP-detected and Spike-detected Datasets with Noise (https://doi.org/10.5281/zenodo.13284452), made available under Creative Commons Attribution 4.0 International!
 
-## **Requirements**
+## **4. Requirements**
 
 Python >= 3.7; all analyses and testing were performed using Python 3.7 within PyCharm V.2023.2
