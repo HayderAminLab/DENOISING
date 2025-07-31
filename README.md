@@ -60,3 +60,10 @@ Hu X, Emery BA, Khanzada S, Amin H. (2024).
   url       = {https://www.frontiersin.org/articles/10.3389/fbioe.2024.1390108/full}
 }
 </pre>
+
+## **6. 📬 Contact**
+
+For questions about the 🧠 **`code`**, please [open an issue](https://github.com/HayderAminLab/DENOISING/issues) in this repository.
+
+For questions about the 📄 **`paper`**, feel free to contact  
+**✉️ [Dr.-Ing. Hayder Amin](mailto:hayder.amin@dzne.de)** 
