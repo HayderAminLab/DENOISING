@@ -38,3 +38,17 @@ The following datasets have been provided for using and test running the DENOISI
 ## **4. Requirements**
 
 Python >= 3.7; all analyses and testing were performed using Python 3.7 within PyCharm V.2023.2
+
+## **5. Citation**
+
+We kindly ask you to cite our paper if you use our code in your research.
+@article{Hu2024DENOISING,
+  author    = {Xin Hu, Brett Addison Emery, Shahrukh Khanzada, and Hayder Amin},
+  title     = {{DENOISING}: Dynamic enhancement and noise overcoming in multimodal neural observations via high-density {CMOS}-based biosensors},
+  journal   = {Frontiers in Bioengineering and Biotechnology},
+  volume    = {12},
+  pages     = {1390108},
+  year      = {2024},
+  doi       = {10.3389/fbioe.2024.1390108},
+  url       = {https://www.frontiersin.org/articles/10.3389/fbioe.2024.1390108/full}
+}
